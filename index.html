@@ -299,26 +299,39 @@
 
     /* ===== EDUCATION ===== */
     #education { background: var(--bg); }
-    .edu-timeline { display: flex; flex-direction: column; gap: 20px; }
-    .edu-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 28px 28px 28px 32px;
-      box-shadow: var(--shadow-sm);
-      position: relative;
-      transition: transform var(--transition), box-shadow var(--transition);
-      overflow: hidden;
+    .edu-timeline {
+      position: relative; padding-left: 48px;
+      display: flex; flex-direction: column; gap: 0;
     }
-    .edu-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-    .edu-item::before {
+    .edu-timeline::after {
       content: '';
-      position: absolute; left: 0; top: 0; bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--primary), var(--primary-pale));
-      border-radius: 4px 0 0 4px;
+      position: absolute; top: 18px; bottom: 18px; left: 15px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--mint-dark) 0%, var(--primary) 45%, var(--primary-pale) 100%);
+      border-radius: 2px;
     }
-    .edu-item.highlight::before {
-      background: linear-gradient(180deg, var(--mint-dark), var(--mint));
+    .edu-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px 26px;
+      box-shadow: var(--shadow-sm);
+      position: relative; margin-bottom: 20px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .edu-item:last-child { margin-bottom: 0; }
+    .edu-item:hover { transform: translateX(5px); box-shadow: var(--shadow-md); }
+    .edu-item::before { display: none; }
+    .edu-dot {
+      position: absolute; left: -40px; top: 22px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--primary);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--primary);
+      z-index: 1;
+    }
+    .edu-item.highlight .edu-dot {
+      background: var(--mint-dark);
+      box-shadow: 0 0 0 2px var(--mint-dark);
     }
     .edu-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
     .edu-degree {
@@ -346,32 +359,55 @@
       color: var(--primary); margin-top: 8px;
     }
 
-    /* ===== RESEARCH INTERESTS ===== */
+    /* ===== RESEARCH INTERESTS — FLOWER ===== */
     #interests { background: #fff; }
-    .interests-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
+    .interests-flower {
+      position: relative; width: 640px; height: 640px; margin: 0 auto;
     }
-    .interest-card {
+    .flower-guide {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 400px; height: 400px; border-radius: 50%;
+      border: 1.5px dashed var(--border); pointer-events: none;
+    }
+    .flower-center {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 115px; height: 115px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-pale), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; z-index: 3;
+      font-family: 'Lora', serif; font-size: 11px; font-weight: 600;
+      color: #fff; line-height: 1.5; padding: 8px;
+      box-shadow: 0 8px 28px rgba(123,141,214,0.40);
+    }
+    .petal-card {
+      position: absolute; width: 163px;
+      transform: translate(-50%, -50%);
       background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 24px;
-      box-shadow: var(--shadow-sm);
-      cursor: default;
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      border: 1.5px solid var(--border);
+      border-radius: 22px; padding: 16px 14px;
+      text-align: center; z-index: 2;
+      box-shadow: var(--shadow-sm); cursor: default;
+      transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
     }
-    .interest-card:hover {
-      transform: translateY(-6px); box-shadow: var(--shadow-md);
-      border-color: var(--primary-pale);
+    .petal-card:hover {
+      box-shadow: var(--shadow-md); border-color: var(--primary-pale);
+      transform: translate(-50%, -50%) scale(1.06);
     }
-    .interest-icon {
-      font-size: 32px; margin-bottom: 14px;
+    /* radius=200px from center (320,320); 6 petals at 60° clockwise from top */
+    .petal-1 { top: 120px;  left: 320px; }
+    .petal-2 { top: 220px;  left: 493px; }
+    .petal-3 { top: 420px;  left: 493px; }
+    .petal-4 { top: 520px;  left: 320px; }
+    .petal-5 { top: 420px;  left: 147px; }
+    .petal-6 { top: 220px;  left: 147px; }
+    .petal-icon { font-size: 26px; margin-bottom: 8px; }
+    .petal-card h3 {
+      font-family: 'Lora', serif; font-size: 13px; font-weight: 600;
+      color: var(--navy); margin-bottom: 5px; line-height: 1.35;
     }
-    .interest-card h3 {
-      font-family: 'Lora', serif; font-size: 15px; font-weight: 600;
-      color: var(--navy); margin-bottom: 8px;
-    }
-    .interest-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+    .petal-card p { font-size: 11.5px; color: var(--text-muted); line-height: 1.55; }
 
     /* ===== PUBLICATIONS ===== */
     #publications { background: var(--bg); }
@@ -534,13 +570,20 @@
       .hero-cta { justify-content: center; }
       .hero-desc { margin-left: auto; margin-right: auto; }
       .about-grid { grid-template-columns: 1fr; }
+      .edu-timeline { padding-left: 32px; }
+      .edu-dot { left: -26px; }
       .edu-header { flex-direction: column; gap: 8px; }
       .project-header { flex-direction: column; gap: 6px; }
+      /* Flower → pill grid on mobile */
+      .interests-flower { width: 100%; height: auto; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+      .flower-guide, .flower-center { display: none; }
+      .petal-card { position: static; transform: none !important; width: calc(50% - 5px); }
+      .petal-card:hover { transform: translateY(-4px) !important; }
     }
     @media (max-width: 540px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .interests-grid { grid-template-columns: 1fr; }
+      .petal-card { width: 100%; }
       .contact-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -579,9 +622,9 @@
       <h1 class="hero-name">陈淳琳</h1>
       <p class="hero-name-en">Chan Shun-lam &nbsp;·&nbsp; Shary</p>
       <p class="hero-desc">
-        清华大学教育研究院博士研究生，研究聚焦于<strong>家长 AI 素养</strong>、
+        清华大学教育学院博士研究生，研究聚焦于<strong>家长 AI 素养</strong>、
         <strong>AI for Parenting</strong> 与<strong>青少年 AI 使用发展</strong>。
-        曾于哈佛教育研究院访学，致力于以实证研究探索人工智能时代的家庭教育新议题。
+        曾于哈佛大学教育学院访学，致力于以实证研究探索人工智能时代的家庭教育新议题。
       </p>
       <div class="hero-badges">
         <span class="badge">
@@ -638,17 +681,17 @@
       </div>
       <div class="about-card reveal reveal-delay-2">
         <div class="about-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/><path d="M9 10h.01M15 10h.01"/></svg>
         </div>
-        <h3>家校社协育</h3>
-        <p>深入研究家庭、学校、社区三方协同育人机制，兼具政策分析与实践干预的双重视角。</p>
+        <h3>人机交互</h3>
+        <p>探索 AI 在家庭教育与青少年发展情境中的角色，研究人工智能与家长、儿童之间的互动机制。</p>
       </div>
       <div class="about-card reveal reveal-delay-3">
         <div class="about-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
         <h3>国际视野</h3>
-        <p>在 AERA、SRCD、EECERA 等顶级国际学术会议报告研究成果，具备跨文化比较研究经验。</p>
+        <p>在 AERA、SRCD、EECERA、AIED 等顶级国际学术会议报告研究成果，具备跨文化比较研究经验。</p>
       </div>
       <div class="about-card reveal reveal-delay-1">
         <div class="about-card-icon">
@@ -670,22 +713,24 @@
 
       <!-- Harvard -->
       <div class="edu-item highlight reveal">
+        <div class="edu-dot"></div>
         <div class="edu-header">
           <div>
             <div class="edu-degree">访问学者 · Visiting Scholar</div>
-            <div class="edu-school">🇺🇸 Harvard Graduate School of Education，哈佛教育研究院</div>
+            <div class="edu-school">🇺🇸 Harvard Graduate School of Education，哈佛大学教育学院</div>
           </div>
           <span class="edu-period" style="color:var(--mint-dark);background:rgba(114,184,174,0.12);">2024 – 2025</span>
         </div>
-        <p class="edu-detail">赴哈佛大学教育研究院访学，开展家校社协同育人的跨文化比较研究，拓展国际学术合作网络。</p>
+        <p class="edu-detail">赴哈佛大学教育学院访学，开展家校社协同育人的跨文化比较研究，拓展国际学术合作网络。</p>
       </div>
 
       <!-- Tsinghua PhD -->
       <div class="edu-item reveal">
+        <div class="edu-dot"></div>
         <div class="edu-header">
           <div>
             <div class="edu-degree">教育学 | 博士研究生</div>
-            <div class="edu-school">🎓 清华大学教育研究院</div>
+            <div class="edu-school">🎓 清华大学教育学院</div>
           </div>
           <span class="edu-period">2023.09 — 至今</span>
         </div>
@@ -698,10 +743,11 @@
 
       <!-- Tsinghua Master -->
       <div class="edu-item reveal">
+        <div class="edu-dot"></div>
         <div class="edu-header">
           <div>
             <div class="edu-degree">高等教育学 | 教育学硕士</div>
-            <div class="edu-school">🎓 清华大学教育研究院</div>
+            <div class="edu-school">🎓 清华大学教育学院</div>
           </div>
           <span class="edu-period">2020.09 — 2023.06</span>
         </div>
@@ -714,6 +760,7 @@
 
       <!-- BNU Bachelor -->
       <div class="edu-item reveal">
+        <div class="edu-dot"></div>
         <div class="edu-header">
           <div>
             <div class="edu-degree">学前教育专业 | 教育学学士</div>
@@ -737,36 +784,44 @@
   <div class="container">
     <p class="section-label">Research Interests</p>
     <h2 class="section-title">研究兴趣</h2>
-    <div class="interests-grid">
-      <div class="interest-card reveal">
-        <div class="interest-icon">🤖</div>
+    <div class="interests-flower reveal">
+      <div class="flower-guide"></div>
+      <div class="flower-center">Research<br>Interests</div>
+      <!-- petal-1: top -->
+      <div class="petal-card petal-1">
+        <div class="petal-icon">🤖</div>
         <h3>AI for Parenting</h3>
-        <p>探究家长人工智能素养（Parental AI Literacy）如何影响其介入青少年 AI 使用的行为模式，及其对青少年 AI 使用能力发展的影响。</p>
+        <p>家长 AI 素养如何塑造对青少年 AI 使用的介入模式</p>
       </div>
-      <div class="interest-card reveal reveal-delay-1">
-        <div class="interest-icon">💡</div>
+      <!-- petal-2: top-right -->
+      <div class="petal-card petal-2">
+        <div class="petal-icon">💡</div>
         <h3>AI 与社会情感学习</h3>
-        <p>研究 AI 伴学角色差异（泛化回答 vs. 空洞称赞）对大学生社会情感能力发展的差异化影响。</p>
+        <p>AI 伴学角色对大学生社会情感发展的差异化影响</p>
       </div>
-      <div class="interest-card reveal reveal-delay-2">
-        <div class="interest-icon">🧠</div>
+      <!-- petal-3: bottom-right -->
+      <div class="petal-card petal-3">
+        <div class="petal-icon">🏫</div>
+        <h3>家庭教育与<br>家校社协同育人</h3>
+        <p>家庭、学校、社区三方协同机制的构建路径</p>
+      </div>
+      <!-- petal-4: bottom -->
+      <div class="petal-card petal-4">
+        <div class="petal-icon">🧠</div>
         <h3>青少年心理健康</h3>
-        <p>探索父母教养行为（心理控制、教养敏感性）与青少年学业动机、心理健康之间的关联机制。</p>
+        <p>父母教养行为与青少年学业动机、心理健康的关联</p>
       </div>
-      <div class="interest-card reveal reveal-delay-3">
-        <div class="interest-icon">🏫</div>
-        <h3>家校社协同育人</h3>
-        <p>探究家庭、学校、社区三方协同机制的构建路径，及其对青少年全面发展的影响。</p>
-      </div>
-      <div class="interest-card reveal reveal-delay-1">
-        <div class="interest-icon">👶</div>
+      <!-- petal-5: bottom-left -->
+      <div class="petal-card petal-5">
+        <div class="petal-icon">👶</div>
         <h3>儿童早期发展</h3>
-        <p>关注学前阶段儿童语言、认知与社会性发展，以及幼儿教师专业化政策的比较研究。</p>
+        <p>学前儿童语言、认知与社会性发展及教师专业化政策</p>
       </div>
-      <div class="interest-card reveal reveal-delay-2">
-        <div class="interest-icon">🌏</div>
+      <!-- petal-6: top-left -->
+      <div class="petal-card petal-6">
+        <div class="petal-icon">🌏</div>
         <h3>比较教育政策</h3>
-        <p>从国际比较视角审视中英等国家校社协育政策演变，为本土政策改进提供参照。</p>
+        <p>从国际视角审视家校社协育政策演变与本土启示</p>
       </div>
     </div>
   </div>
@@ -801,7 +856,7 @@
       <!-- NEW: ISSBD 2025 Poster -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge new">★ New · ISSBD 2025</span>
+        <span class="pub-badge new">Poster · ISSBD 2026</span>
         <div class="pub-title">
           AI as A Mediator in Parent-Child Relationships: A Qualitative Exploration of Parent-Child Dynamic Interviews
         </div>
@@ -978,7 +1033,7 @@
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge new">★ New · ISSBD 2025</span>
+        <span class="pub-badge new">Poster · ISSBD 2026</span>
         <div class="pub-title">AI as A Mediator in Parent-Child Relationships: A Qualitative Exploration of Parent-Child Dynamic Interviews</div>
         <div class="pub-authors"><strong>Chan, S. L.</strong>, et al.</div>
         <div class="pub-venue">Poster presented at the ISSBD Biennial Meeting, 2025</div>
