@@ -221,19 +221,24 @@
       width: 200px; height: 200px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary-pale), var(--primary));
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Lora', serif;
-      font-size: 64px; color: #fff; font-weight: 600;
       box-shadow: 0 16px 48px rgba(123,141,214,0.35);
       flex-shrink: 0;
       position: relative;
       overflow: hidden;
     }
+    .hero-avatar-fallback {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Lora', serif;
+      font-size: 64px; color: #fff; font-weight: 600;
+      z-index: 0; pointer-events: none;
+    }
     .hero-avatar img {
-      position: absolute; inset: 0;
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       width: 100%; height: 100%;
       object-fit: cover; object-position: center top;
-      border-radius: 50%;
       z-index: 1;
     }
     .hero-avatar::after {
@@ -591,8 +596,8 @@
       </div>
     </div>
     <div class="hero-avatar">
+      <span class="hero-avatar-fallback">陈</span>
       <img src="avatar.jpg" alt="Shary Chan" onerror="this.style.display='none'" />
-      陈
     </div>
   </div>
 </section>
@@ -603,8 +608,7 @@
     <p class="section-label">About</p>
     <h2 class="section-title">关于我</h2>
     <p class="about-intro reveal">
-      我是清华大学教育研究院的博士研究生，师从魏晓旭副教授。
-      博士论文聚焦于<strong>家长人工智能素养（Parental AI Literacy）</strong>——
+      我是清华大学教育研究院的博士研究生，博士论文聚焦于<strong>家长人工智能素养（Parental AI Literacy）</strong>——
       探究家长的 AI 素养如何影响其介入青少年 AI 使用的行为，识别其中的典型模式，
       并分析这些模式对青少年 AI 使用能力发展的影响机制。
       曾赴<strong>哈佛教育研究院</strong>访学，积累跨文化比较研究视野；
