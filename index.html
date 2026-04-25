@@ -223,6 +223,12 @@
       box-shadow: 0 16px 48px rgba(200,98,42,0.3);
       flex-shrink: 0;
       position: relative;
+      overflow: hidden;
+    }
+    .hero-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      border-radius: 50%;
     }
     .hero-avatar::after {
       content: '';
@@ -230,6 +236,7 @@
       border-radius: 50%;
       border: 2px dashed var(--orange-pale);
       animation: rotate 20s linear infinite;
+      pointer-events: none;
     }
     @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
@@ -546,11 +553,11 @@
     <div class="hero-text">
       <div class="hero-tag">PhD Candidate · Tsinghua University</div>
       <h1 class="hero-name">陈淳琳</h1>
-      <p class="hero-name-en">Chan Shun-lam</p>
+      <p class="hero-name-en">Chan Shun-lam &nbsp;·&nbsp; Shary</p>
       <p class="hero-desc">
-        清华大学教育研究院博士研究生，研究聚焦于<strong>家校社协同育人</strong>、
-        <strong>家长教育焦虑</strong>与<strong>青少年心理发展</strong>。
-        曾于哈佛教育研究院访学，致力于以实证研究推动家庭教育质量提升。
+        清华大学教育研究院博士研究生，研究聚焦于<strong>家长 AI 素养</strong>、
+        <strong>AI for Parenting</strong> 与<strong>青少年 AI 使用发展</strong>。
+        曾于哈佛教育研究院访学，致力于以实证研究探索人工智能时代的家庭教育新议题。
       </p>
       <div class="hero-badges">
         <span class="badge">
@@ -577,7 +584,10 @@
         </a>
       </div>
     </div>
-    <div class="hero-avatar">陈</div>
+    <div class="hero-avatar">
+      <img src="avatar.jpg" alt="Shary Chan" onerror="this.style.display='none'" />
+      陈
+    </div>
   </div>
 </section>
 
@@ -587,11 +597,13 @@
     <p class="section-label">About</p>
     <h2 class="section-title">关于我</h2>
     <p class="about-intro reveal">
-      我是清华大学教育研究院的博士研究生，师从魏晓旭副教授，研究方向聚焦于<strong>家校社协同育人</strong>
-      与<strong>家长心理及教育行为</strong>。硕士阶段以优异成绩（学分均绩 3.93/4）毕业，
-      博士阶段延续前沿研究方向，探索"双减"政策背景下父母教育焦虑的形成机制及其对青少年发展的影响。
-      曾赴<strong>哈佛教育研究院</strong>访学，积累跨文化比较研究视野。
-      本科就读于<strong>北京师范大学教育学部</strong>学前教育专业，奠定扎实的儿童发展与教育学基础。
+      我是清华大学教育研究院的博士研究生，师从魏晓旭副教授。
+      博士论文聚焦于<strong>家长人工智能素养（Parental AI Literacy）</strong>——
+      探究家长的 AI 素养如何影响其介入青少年 AI 使用的行为，识别其中的典型模式，
+      并分析这些模式对青少年 AI 使用能力发展的影响机制。
+      曾赴<strong>哈佛教育研究院</strong>访学，积累跨文化比较研究视野；
+      本科就读于<strong>北京师范大学教育学部</strong>学前教育专业，
+      奠定扎实的儿童发展与教育学基础。
     </p>
     <div class="about-grid">
       <div class="about-card reveal reveal-delay-1">
@@ -709,9 +721,9 @@
         <p>探究家庭、学校、社区三方协同机制的构建路径，及其对青少年全面发展的影响。</p>
       </div>
       <div class="interest-card reveal reveal-delay-1">
-        <div class="interest-icon">😟</div>
-        <h3>家长教育焦虑</h3>
-        <p>研究"双减"政策背景下家长教育焦虑的影响因素、变化轨迹及其对子女学业与心理发展的传导机制。</p>
+        <div class="interest-icon">🤖</div>
+        <h3>AI for Parenting</h3>
+        <p>探究家长人工智能素养（Parental AI Literacy）如何影响其介入青少年 AI 使用的行为模式，及其对青少年 AI 使用能力发展的影响。</p>
       </div>
       <div class="interest-card reveal reveal-delay-2">
         <div class="interest-icon">👶</div>
@@ -724,9 +736,9 @@
         <p>探索父母教养行为（心理控制、教养敏感性）与青少年学业动机、心理健康之间的关联机制。</p>
       </div>
       <div class="interest-card reveal reveal-delay-1">
-        <div class="interest-icon">🤖</div>
-        <h3>AI 与教育</h3>
-        <p>关注人工智能技术在教育场景中的应用，探究 AI 辅助学习对学生认知发展与学业表现的影响。</p>
+        <div class="interest-icon">💡</div>
+        <h3>AI 与社会情感学习</h3>
+        <p>研究 AI 伴学角色差异（泛化回答 vs. 空洞称赞）对大学生社会情感能力发展的差异化影响。</p>
       </div>
       <div class="interest-card reveal reveal-delay-2">
         <div class="interest-icon">🌏</div>
@@ -987,6 +999,18 @@
     <p class="section-label">Research Projects</p>
     <h2 class="section-title">参与过的研究项目</h2>
     <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-dot"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">博士论文：家长人工智能素养对青少年 AI 使用介入行为的影响机制研究</div>
+            <span class="project-period">2023.09 — 至今</span>
+          </div>
+          <div class="project-desc">探究家长 AI 素养（Parental AI Literacy）如何影响其介入青少年 AI 使用的行为，识别典型介入模式，并分析不同模式对青少年 AI 使用能力发展的影响路径。</div>
+          <span class="project-role">博士论文主持人</span>
+        </div>
+      </div>
 
       <div class="project-card reveal">
         <div class="project-dot"></div>
