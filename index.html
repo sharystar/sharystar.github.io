@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陈淳琳 | Chan Shun-lam — Academic Homepage</title>
+  <meta name="description" content="陈淳琳 Chan Shun-lam — PhD candidate at Tsinghua University, researching family-school-community collaboration, parental education anxiety, and child development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange:       #C8622A;
+      --orange-light: #E07A4A;
+      --orange-pale:  #F4CCAA;
+      --brown-dark:   #3D200E;
+      --brown:        #6B3F2A;
+      --brown-medium: #8B5A3A;
+      --cream:        #FEF9F5;
+      --cream-card:   #FFFAF6;
+      --cream-border: #EAD8C6;
+      --text-dark:    #2C1A0E;
+      --text-mid:     #5C3D2A;
+      --text-muted:   #9C7A62;
+      --shadow-sm:    0 2px 8px rgba(61,32,14,0.08);
+      --shadow-md:    0 6px 24px rgba(61,32,14,0.12);
+      --shadow-lg:    0 12px 40px rgba(61,32,14,0.16);
+      --radius:       12px;
+      --radius-lg:    20px;
+      --transition:   0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--cream); }
+    ::-webkit-scrollbar-thumb { background: var(--orange-pale); border-radius: 3px; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(254,249,245,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--cream-border);
+      padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+      transition: box-shadow var(--transition);
+    }
+    nav.scrolled { box-shadow: var(--shadow-sm); }
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-weight: 600; font-size: 17px;
+      color: var(--brown-dark);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+    .nav-links {
+      display: flex; gap: 6px; list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none; color: var(--text-mid);
+      font-size: 13px; font-weight: 500;
+      padding: 6px 12px; border-radius: 20px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active {
+      background: var(--orange); color: #fff;
+    }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--brown); border-radius: 2px;
+      transition: var(--transition);
+    }
+    .mobile-menu {
+      display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
+      background: var(--cream-card);
+      border-bottom: 1px solid var(--cream-border);
+      padding: 16px 24px;
+      flex-direction: column; gap: 4px;
+      box-shadow: var(--shadow-md);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      text-decoration: none; color: var(--text-mid);
+      font-size: 15px; font-weight: 500;
+      padding: 10px 14px; border-radius: 8px;
+      transition: background var(--transition), color var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--orange-pale); color: var(--brown-dark); }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 80px 24px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .section-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+      color: var(--orange); text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 600; color: var(--brown-dark);
+      margin-bottom: 40px;
+      position: relative; display: inline-block;
+    }
+    .section-title::after {
+      content: '';
+      display: block; position: absolute; bottom: -10px; left: 0;
+      width: 48px; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-pale));
+      border-radius: 2px;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      background: linear-gradient(135deg, #FEF9F5 0%, #F5E6D8 60%, #EDD5BE 100%);
+      padding-top: 80px;
+    }
+    .hero-inner {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 60px; align-items: center;
+    }
+    .hero-text {}
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(200,98,42,0.1);
+      color: var(--orange); font-size: 12px; font-weight: 600;
+      padding: 6px 14px; border-radius: 20px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-tag::before {
+      content: ''; width: 7px; height: 7px;
+      background: var(--orange); border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-name {
+      font-family: 'Lora', serif;
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 600; line-height: 1.15;
+      color: var(--brown-dark);
+      margin-bottom: 6px;
+    }
+    .hero-name-en {
+      font-family: 'Lora', serif;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 400; font-style: italic;
+      color: var(--brown-medium);
+      margin-bottom: 20px;
+    }
+    .hero-desc {
+      font-size: 15px; color: var(--text-mid); line-height: 1.8;
+      max-width: 540px; margin-bottom: 32px;
+    }
+    .hero-desc strong { color: var(--brown-dark); font-weight: 600; }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px;
+    }
+    .badge {
+      display: flex; align-items: center; gap: 6px;
+      background: #fff; border: 1px solid var(--cream-border);
+      color: var(--text-mid); font-size: 12px; font-weight: 500;
+      padding: 6px 14px; border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+    .badge svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--orange); color: #fff;
+      font-size: 14px; font-weight: 600;
+      padding: 12px 24px; border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(200,98,42,0.35);
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+    .btn-primary:hover {
+      background: var(--orange-light); transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,98,42,0.4);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--brown);
+      font-size: 14px; font-weight: 600;
+      padding: 12px 24px; border-radius: 30px;
+      text-decoration: none;
+      border: 2px solid var(--cream-border);
+      transition: border-color var(--transition), color var(--transition), transform var(--transition);
+    }
+    .btn-secondary:hover {
+      border-color: var(--orange); color: var(--orange);
+      transform: translateY(-2px);
+    }
+    .hero-avatar {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange-pale), var(--orange));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lora', serif;
+      font-size: 64px; color: #fff; font-weight: 600;
+      box-shadow: 0 16px 48px rgba(200,98,42,0.3);
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero-avatar::after {
+      content: '';
+      position: absolute; inset: -6px;
+      border-radius: 50%;
+      border: 2px dashed var(--orange-pale);
+      animation: rotate 20s linear infinite;
+    }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ===== ABOUT ===== */
+    #about { background: #fff; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+    }
+    .about-card {
+      background: var(--cream-card);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius); padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .about-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .about-card-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--orange-pale), var(--orange));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .about-card-icon svg { width: 22px; height: 22px; color: #fff; }
+    .about-card h3 {
+      font-family: 'Lora', serif; font-size: 16px; font-weight: 600;
+      color: var(--brown-dark); margin-bottom: 8px;
+    }
+    .about-card p {
+      font-size: 14px; color: var(--text-mid); line-height: 1.7;
+    }
+    .about-intro {
+      font-size: 15px; color: var(--text-mid); line-height: 1.85;
+      margin-bottom: 32px;
+    }
+    .about-intro strong { color: var(--brown-dark); }
+
+    /* ===== EDUCATION ===== */
+    #education { background: var(--cream); }
+    .edu-timeline { display: flex; flex-direction: column; gap: 20px; }
+    .edu-item {
+      background: #fff;
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius-lg); padding: 28px 28px 28px 32px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: transform var(--transition), box-shadow var(--transition);
+      overflow: hidden;
+    }
+    .edu-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .edu-item::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--orange), var(--orange-pale));
+      border-radius: 4px 0 0 4px;
+    }
+    .edu-item.highlight::before {
+      background: linear-gradient(180deg, #6B4FB3, #B89FE8);
+    }
+    .edu-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+    .edu-degree {
+      font-family: 'Lora', serif; font-size: 17px; font-weight: 600;
+      color: var(--brown-dark);
+    }
+    .edu-period {
+      font-size: 12px; font-weight: 600; color: var(--orange);
+      background: rgba(200,98,42,0.08);
+      padding: 4px 12px; border-radius: 20px; white-space: nowrap;
+    }
+    .edu-item.highlight .edu-period {
+      color: #6B4FB3; background: rgba(107,79,179,0.08);
+    }
+    .edu-school {
+      font-size: 14px; color: var(--brown-medium); font-weight: 500;
+      margin: 4px 0 10px;
+    }
+    .edu-detail {
+      font-size: 13px; color: var(--text-muted); line-height: 1.6;
+    }
+    .edu-gpa {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 600;
+      color: var(--orange); margin-top: 8px;
+    }
+
+    /* ===== RESEARCH INTERESTS ===== */
+    #interests { background: #fff; }
+    .interests-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .interest-card {
+      background: var(--cream-card);
+      border: 1px solid var(--cream-border);
+      border-radius: var(--radius); padding: 24px;
+      box-shadow: var(--shadow-sm);
+      cursor: default;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+    .interest-card:hover {
+      transform: translateY(-6px); box-shadow: var(--shadow-md);
+      border-color: var(--orange-pale);
+    }
+    .interest-icon {
+      font-size: 32px; margin-bottom: 14px;
+    }
+    .interest-card h3 {
+      font-family: 'Lora', serif; font-size: 15px; font-weight: 600;
+      color: var(--brown-dark); margin-bottom: 8px;
+    }
+    .interest-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ===== PUBLICATIONS ===== */
+    #publications { background: var(--cream); }
+    .pub-tabs {
+      display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .pub-tab {
+      background: #fff; border: 1px solid var(--cream-border);
+      color: var(--text-mid); font-size: 13px; font-weight: 500;
+      padding: 8px 18px; border-radius: 20px; cursor: pointer;
+      transition: all var(--transition);
+    }
+    .pub-tab.active, .pub-tab:hover {
+      background: var(--orange); border-color: var(--orange); color: #fff;
+    }
+    .pub-list { display: none; flex-direction: column; gap: 16px; }
+    .pub-list.active { display: flex; }
+    .pub-card {
+      background: #fff; border: 1px solid var(--cream-border);
+      border-radius: var(--radius); padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+      position: relative;
+    }
+    .pub-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .pub-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      padding: 3px 10px; border-radius: 10px; margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .pub-badge.journal { background: rgba(200,98,42,0.12); color: var(--orange); }
+    .pub-badge.conference { background: rgba(107,63,42,0.1); color: var(--brown); }
+    .pub-badge.new { background: rgba(34,197,94,0.12); color: #16a34a; }
+    .pub-title {
+      font-family: 'Lora', serif; font-size: 15px; font-weight: 600;
+      color: var(--brown-dark); line-height: 1.5; margin-bottom: 8px;
+    }
+    .pub-authors { font-size: 13px; color: var(--text-mid); margin-bottom: 6px; }
+    .pub-authors strong { color: var(--orange); font-weight: 600; }
+    .pub-venue { font-size: 13px; color: var(--text-muted); font-style: italic; }
+    .pub-year {
+      position: absolute; top: 22px; right: 22px;
+      font-size: 12px; font-weight: 700; color: var(--text-muted);
+    }
+
+    /* ===== PROJECTS ===== */
+    #projects { background: #fff; }
+    .projects-grid { display: flex; flex-direction: column; gap: 16px; }
+    .project-card {
+      background: var(--cream-card); border: 1px solid var(--cream-border);
+      border-radius: var(--radius); padding: 22px 24px;
+      display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start;
+      box-shadow: var(--shadow-sm);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .project-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+    .project-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--orange); margin-top: 6px; flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(200,98,42,0.15);
+    }
+    .project-dot.muted { background: var(--brown-medium); box-shadow: 0 0 0 4px rgba(107,63,42,0.12); }
+    .project-header { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: flex-start; }
+    .project-title {
+      font-family: 'Lora', serif; font-size: 15px; font-weight: 600;
+      color: var(--brown-dark); line-height: 1.45;
+    }
+    .project-period {
+      font-size: 11px; font-weight: 600; color: var(--orange);
+      background: rgba(200,98,42,0.08);
+      padding: 3px 10px; border-radius: 12px; white-space: nowrap;
+    }
+    .project-desc { font-size: 13px; color: var(--text-mid); margin-top: 8px; line-height: 1.65; }
+    .project-role {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 600; color: var(--brown-medium);
+      margin-top: 8px;
+    }
+    .project-role::before {
+      content: '';
+      display: inline-block; width: 5px; height: 5px;
+      border-radius: 50%; background: var(--brown-medium);
+    }
+
+    /* ===== CONTACT ===== */
+    #contact {
+      background: linear-gradient(135deg, var(--brown-dark) 0%, #5C2E14 100%);
+      color: #fff;
+    }
+    #contact .section-label { color: var(--orange-pale); }
+    #contact .section-title { color: #fff; }
+    #contact .section-title::after { background: linear-gradient(90deg, var(--orange-light), transparent); }
+    .contact-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px; margin-bottom: 40px;
+    }
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius); padding: 20px;
+      display: flex; align-items: center; gap: 14px;
+      transition: background var(--transition), transform var(--transition);
+      text-decoration: none; color: inherit;
+    }
+    .contact-card:hover {
+      background: rgba(255,255,255,0.12); transform: translateY(-3px);
+    }
+    .contact-icon {
+      width: 42px; height: 42px; border-radius: 10px;
+      background: rgba(200,98,42,0.3);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-icon svg { width: 20px; height: 20px; color: var(--orange-pale); }
+    .contact-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 3px; font-weight: 500; }
+    .contact-value { font-size: 14px; color: #fff; font-weight: 500; }
+    .contact-note {
+      font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--brown-dark); color: rgba(255,255,255,0.4);
+      text-align: center; font-size: 12px; padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    footer a { color: var(--orange-pale); text-decoration: none; }
+
+    /* ===== REVEAL ANIMATION ===== */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== SCROLL-TO-TOP ===== */
+    .scroll-top {
+      position: fixed; bottom: 28px; right: 28px; z-index: 50;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--orange); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(200,98,42,0.4);
+      opacity: 0; pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+    }
+    .scroll-top.visible { opacity: 1; pointer-events: auto; }
+    .scroll-top:hover { transform: translateY(-3px); }
+    .scroll-top svg { width: 18px; height: 18px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 720px) {
+      section { padding: 60px 20px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+      .hero-avatar { width: 140px; height: 140px; font-size: 44px; margin: 0 auto; }
+      .hero-badges { justify-content: center; }
+      .hero-cta { justify-content: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .about-grid { grid-template-columns: 1fr; }
+      .edu-header { flex-direction: column; gap: 8px; }
+      .project-header { flex-direction: column; gap: 6px; }
+    }
+    @media (max-width: 540px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .interests-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#hero">陈淳琳</a>
+  <ul class="nav-links">
+    <li><a href="#about">关于我</a></li>
+    <li><a href="#education">教育背景</a></li>
+    <li><a href="#interests">研究兴趣</a></li>
+    <li><a href="#publications">发表论文</a></li>
+    <li><a href="#projects">研究项目</a></li>
+    <li><a href="#contact">联系方式</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="菜单">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">关于我</a>
+  <a href="#education">教育背景</a>
+  <a href="#interests">研究兴趣</a>
+  <a href="#publications">发表论文</a>
+  <a href="#projects">研究项目</a>
+  <a href="#contact">联系方式</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner container">
+    <div class="hero-text">
+      <div class="hero-tag">PhD Candidate · Tsinghua University</div>
+      <h1 class="hero-name">陈淳琳</h1>
+      <p class="hero-name-en">Chan Shun-lam</p>
+      <p class="hero-desc">
+        清华大学教育研究院博士研究生，研究聚焦于<strong>家校社协同育人</strong>、
+        <strong>家长教育焦虑</strong>与<strong>青少年心理发展</strong>。
+        曾于哈佛教育研究院访学，致力于以实证研究推动家庭教育质量提升。
+      </p>
+      <div class="hero-badges">
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          清华大学
+        </span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          2023 — 至今
+        </span>
+        <span class="badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          北京 · 海淀
+        </span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-primary" href="#publications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          查看论文
+        </a>
+        <a class="btn-secondary" href="#contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          联系我
+        </a>
+      </div>
+    </div>
+    <div class="hero-avatar">陈</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <h2 class="section-title">关于我</h2>
+    <p class="about-intro reveal">
+      我是清华大学教育研究院的博士研究生，师从魏晓旭副教授，研究方向聚焦于<strong>家校社协同育人</strong>
+      与<strong>家长心理及教育行为</strong>。硕士阶段以优异成绩（学分均绩 3.93/4）毕业，
+      博士阶段延续前沿研究方向，探索"双减"政策背景下父母教育焦虑的形成机制及其对青少年发展的影响。
+      曾赴<strong>哈佛教育研究院</strong>访学，积累跨文化比较研究视野。
+      本科就读于<strong>北京师范大学教育学部</strong>学前教育专业，奠定扎实的儿童发展与教育学基础。
+    </p>
+    <div class="about-grid">
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <h3>实证研究</h3>
+        <p>擅长量化与质性混合研究方法，主持或参与十余项科研课题，具备扎实的数据分析与调研设计能力。</p>
+      </div>
+      <div class="about-card reveal reveal-delay-2">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>家校社协育</h3>
+        <p>深入研究家庭、学校、社区三方协同育人机制，兼具政策分析与实践干预的双重视角。</p>
+      </div>
+      <div class="about-card reveal reveal-delay-3">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <h3>国际视野</h3>
+        <p>在 AERA、SRCD、EECERA 等顶级国际学术会议报告研究成果，具备跨文化比较研究经验。</p>
+      </div>
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        </div>
+        <h3>教学实践</h3>
+        <p>担任《教育心理学》《学术之道》《家庭教育导论》等课程助教，独立完成小班课备课与论文辅导。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">教育背景</h2>
+    <div class="edu-timeline">
+
+      <!-- Harvard -->
+      <div class="edu-item highlight reveal">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">访问学者 · Visiting Scholar</div>
+            <div class="edu-school">🇺🇸 Harvard Graduate School of Education，哈佛教育研究院</div>
+          </div>
+          <span class="edu-period" style="color:#6B4FB3;background:rgba(107,79,179,0.08);">2024 – 2025</span>
+        </div>
+        <p class="edu-detail">赴哈佛大学教育研究院访学，开展家校社协同育人的跨文化比较研究，拓展国际学术合作网络。</p>
+      </div>
+
+      <!-- Tsinghua PhD -->
+      <div class="edu-item reveal">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">教育学 | 博士研究生</div>
+            <div class="edu-school">🎓 清华大学教育研究院</div>
+          </div>
+          <span class="edu-period">2023.09 — 至今</span>
+        </div>
+        <p class="edu-detail">主修课程：教育心理学、发展心理学、教育社会学等。师从魏晓旭副教授，研究家长教育焦虑与家校社协同育人机制。</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          学位课学分均绩 3.88 / 4.0
+        </div>
+      </div>
+
+      <!-- Tsinghua Master -->
+      <div class="edu-item reveal">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">高等教育学 | 教育学硕士</div>
+            <div class="edu-school">🎓 清华大学教育研究院</div>
+          </div>
+          <span class="edu-period">2020.09 — 2023.06</span>
+        </div>
+        <p class="edu-detail">主修课程：教育心理学、发展心理学、认知理论与学习科学等。硕士论文《双减背景下中学生家长教育焦虑现况及其对青少年学业发展的影响研究》。</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          学位课学分均绩 3.93 / 4.0
+        </div>
+      </div>
+
+      <!-- BNU Bachelor -->
+      <div class="edu-item reveal">
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">学前教育专业 | 教育学学士</div>
+            <div class="edu-school">🎓 北京师范大学教育学部</div>
+          </div>
+          <span class="edu-period">2016.09 — 2020.07</span>
+        </div>
+        <p class="edu-detail">主修课程：教育学原理、比较学前教育、学前儿童心理学、学前儿童语言教育等。毕业论文《从"资格"到"专业"：中澳幼儿教师专业发展政策的比较研究》获"优秀"评级。</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          毕业学分均绩 3.85 / 4.0
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="interests">
+  <div class="container">
+    <p class="section-label">Research Interests</p>
+    <h2 class="section-title">研究兴趣</h2>
+    <div class="interests-grid">
+      <div class="interest-card reveal">
+        <div class="interest-icon">🏫</div>
+        <h3>家校社协同育人</h3>
+        <p>探究家庭、学校、社区三方协同机制的构建路径，及其对青少年全面发展的影响。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-1">
+        <div class="interest-icon">😟</div>
+        <h3>家长教育焦虑</h3>
+        <p>研究"双减"政策背景下家长教育焦虑的影响因素、变化轨迹及其对子女学业与心理发展的传导机制。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-2">
+        <div class="interest-icon">👶</div>
+        <h3>儿童早期发展</h3>
+        <p>关注学前阶段儿童语言、认知与社会性发展，以及幼儿教师专业化政策的比较研究。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-3">
+        <div class="interest-icon">🧠</div>
+        <h3>青少年心理健康</h3>
+        <p>探索父母教养行为（心理控制、教养敏感性）与青少年学业动机、心理健康之间的关联机制。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-1">
+        <div class="interest-icon">🤖</div>
+        <h3>AI 与教育</h3>
+        <p>关注人工智能技术在教育场景中的应用，探究 AI 辅助学习对学生认知发展与学业表现的影响。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-2">
+        <div class="interest-icon">🌏</div>
+        <h3>比较教育政策</h3>
+        <p>从国际比较视角审视中英等国家校社协育政策演变，为本土政策改进提供参照。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <p class="section-label">Publications</p>
+    <h2 class="section-title">发表论文</h2>
+
+    <div class="pub-tabs">
+      <button class="pub-tab active" data-target="all">全部</button>
+      <button class="pub-tab" data-target="journal">期刊论文</button>
+      <button class="pub-tab" data-target="conference">会议论文</button>
+    </div>
+
+    <!-- ALL -->
+    <div class="pub-list active" id="pub-all">
+
+      <!-- NEW: AIED 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge new">★ New · AIED 2025</span>
+        <div class="pub-title">
+          [AIED 2025 Paper — Title to be updated by author]
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, et al.</div>
+        <div class="pub-venue">International Conference on Artificial Intelligence in Education (AIED 2025)</div>
+      </div>
+
+      <!-- NEW: ISSBD 2025 Poster -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge new">★ New · ISSBD 2025</span>
+        <div class="pub-title">
+          [ISSBD 2025 Poster — Title to be updated by author]
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, et al.</div>
+        <div class="pub-venue">Poster presented at the ISSBD Biennial Meeting, 2025</div>
+      </div>
+
+      <!-- SRCD 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">
+          Concurrent and Longitudinal Associations Between Parents' Child-based Worth, Education Anxiety and Psychological Control in China
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Yi, C., &amp; Wei, J.</div>
+        <div class="pub-venue">Poster presented at the SRCD 2025 Biennial Meeting, Minneapolis, Minnesota, USA (May 2025)</div>
+      </div>
+
+      <!-- AERA 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">
+          Exploring the Policy Influences on Chinese Parents' Education Anxiety
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">Poster presented at the 2025 AERA Annual Meeting, Denver, Colorado, USA (Apr. 2025)</div>
+      </div>
+
+      <!-- Basic Edu Review 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          Building Family-school-community Cooperative Education System with Trust and Sharing: Overview of the Experience from the United Kingdom
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Sun, X., He, Z., Wei, Y., &amp; Wei, J.</div>
+        <div class="pub-venue">Basic Education Review, (01), 42–58.</div>
+      </div>
+
+      <!-- JHS 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          Trajectories of Authentic Inner Compass in the College Years: Implications for Psychological Functioning among Chinese Students
+        </div>
+        <div class="pub-authors">Zhou, X., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">Journal of Happiness Studies, 26(1), 48.</div>
+      </div>
+
+      <!-- ARQL 2025 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          The Cross-lagged Associations between Authentic Inner Compass and Self-control among Chinese College Students
+        </div>
+        <div class="pub-authors">Wei, J., Zhou, X., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Applied Research in Quality of Life, 1–19.</div>
+      </div>
+
+      <!-- Memory 2023 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          My Child and I: Self- and Child-reference Effects among Parents with Self-worth Contingent on Children's Performance
+        </div>
+        <div class="pub-authors">Zhang, M. R., Ng, F. F., Hong, Y. Y., Wei, J., Liu, R. D., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Memory (Hove, England), 31(9), 1244–1257.</div>
+      </div>
+
+      <!-- FEC 2023 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          The Associations between Middle School Parents' Educational Anxiety and Their Academic Socialization and Psychological Control: The Moderating Role of Parent-Adolescent Relationships
+        </div>
+        <div class="pub-authors">Liu, H., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">The Family Education of China, (04), 30–40.</div>
+      </div>
+
+      <!-- ISSCD Hong Kong 2023 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">
+          Parents' Education Anxiety in Mainland China: Current Situation and Future Trends
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Paper presented at the International Summer School and Research Conference for Doctoral Students, Hong Kong, China (Jul. 2023)</div>
+      </div>
+
+      <!-- TJOE 2022 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2022</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">
+          The Association between Freshmen's Academic Involution and College Adjustment: The Moderating Effect of Academic Involution Atmosphere
+        </div>
+        <div class="pub-authors">Zhou, X., Wei, J., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Tsinghua Journal of Education, (05), 131–140.</div>
+      </div>
+
+      <!-- EECERA 2019 -->
+      <div class="pub-card reveal">
+        <span class="pub-year">2019</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">
+          The Impact of Home Multimedia Environment on the Development of Language Ability of 3–6 Years Old Children: A Case Study of S City
+        </div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Wang, S., Zhang, C., &amp; Liu, T.</div>
+        <div class="pub-venue">Paper presented at the EECERA Annual Conference, Thessaloniki, Greece (Aug. 2019)</div>
+      </div>
+
+    </div>
+
+    <!-- JOURNAL ONLY -->
+    <div class="pub-list" id="pub-journal">
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">Building Family-school-community Cooperative Education System with Trust and Sharing: Overview of the Experience from the United Kingdom</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Sun, X., He, Z., Wei, Y., &amp; Wei, J.</div>
+        <div class="pub-venue">Basic Education Review, (01), 42–58.</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">Trajectories of Authentic Inner Compass in the College Years: Implications for Psychological Functioning among Chinese Students</div>
+        <div class="pub-authors">Zhou, X., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">Journal of Happiness Studies, 26(1), 48.</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">The Cross-lagged Associations between Authentic Inner Compass and Self-control among Chinese College Students</div>
+        <div class="pub-authors">Wei, J., Zhou, X., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Applied Research in Quality of Life, 1–19.</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">My Child and I: Self- and Child-reference Effects among Parents with Self-worth Contingent on Children's Performance</div>
+        <div class="pub-authors">Zhang, M. R., Ng, F. F., Hong, Y. Y., Wei, J., Liu, R. D., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Memory (Hove, England), 31(9), 1244–1257.</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">The Associations between Middle School Parents' Educational Anxiety and Their Academic Socialization and Psychological Control</div>
+        <div class="pub-authors">Liu, H., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">The Family Education of China, (04), 30–40.</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2022</span>
+        <span class="pub-badge journal">期刊</span>
+        <div class="pub-title">The Association between Freshmen's Academic Involution and College Adjustment: The Moderating Effect of Academic Involution Atmosphere</div>
+        <div class="pub-authors">Zhou, X., Wei, J., &amp; <strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">Tsinghua Journal of Education, (05), 131–140.</div>
+      </div>
+    </div>
+
+    <!-- CONFERENCE ONLY -->
+    <div class="pub-list" id="pub-conference">
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge new">★ New · AIED 2025</span>
+        <div class="pub-title">[AIED 2025 Paper — Title to be updated by author]</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, et al.</div>
+        <div class="pub-venue">International Conference on Artificial Intelligence in Education (AIED 2025)</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge new">★ New · ISSBD 2025</span>
+        <div class="pub-title">[ISSBD 2025 Poster — Title to be updated by author]</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, et al.</div>
+        <div class="pub-venue">Poster presented at the ISSBD Biennial Meeting, 2025</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">Concurrent and Longitudinal Associations Between Parents' Child-based Worth, Education Anxiety and Psychological Control in China</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Yi, C., &amp; Wei, J.</div>
+        <div class="pub-venue">Poster presented at the SRCD 2025 Biennial Meeting, Minneapolis, Minnesota, USA (May 2025)</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2025</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">Exploring the Policy Influences on Chinese Parents' Education Anxiety</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
+        <div class="pub-venue">Poster presented at the 2025 AERA Annual Meeting, Denver, Colorado, USA (Apr. 2025)</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2023</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">Parents' Education Anxiety in Mainland China: Current Situation and Future Trends</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong></div>
+        <div class="pub-venue">International Summer School and Research Conference for Doctoral Students, Hong Kong (Jul. 2023)</div>
+      </div>
+      <div class="pub-card reveal">
+        <span class="pub-year">2019</span>
+        <span class="pub-badge conference">会议</span>
+        <div class="pub-title">The Impact of Home Multimedia Environment on the Development of Language Ability of 3–6 Years Old Children</div>
+        <div class="pub-authors"><strong>Chan, S. L.</strong>, Wang, S., Zhang, C., &amp; Liu, T.</div>
+        <div class="pub-venue">EECERA Annual Conference, Thessaloniki, Greece (Aug. 2019)</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">Research Projects</p>
+    <h2 class="section-title">参与过的研究项目</h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-dot"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">北京市门头沟区教育"十五五"时期教育改革和发展规划</div>
+            <span class="project-period">2025.03 — 至今</span>
+          </div>
+          <div class="project-desc">梳理门头沟区基础教育及家校社协育发展现状与重点任务，参与实地调研及报告写作。</div>
+          <span class="project-role">协助负责人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">小学-初中衔接视角下父母教养敏感性的变化趋势及影响机制研究</div>
+            <span class="project-period">2024.10 — 至今</span>
+          </div>
+          <div class="project-desc">梳理当前父母教养敏感性现状及特征，组织开展追踪研究，设计纵向调研方案。</div>
+          <span class="project-role">协助负责人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">家校心理健康共育现状及对策研究</div>
+            <span class="project-period">2024.07 — 2024.08</span>
+          </div>
+          <div class="project-desc">主持调研项目，梳理当前高中家校社共育困境，为构建公办高中家校社协同促进学生心理健康机制提出政策方案。</div>
+          <span class="project-role">项目主持人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">香港国民教育调查研究</div>
+            <span class="project-period">2024.02</span>
+          </div>
+          <div class="project-desc">任调研支队长，就香港人文学科课程改革、国民教育体系构建开展深度调研，产出《香港国民教育课程改革研究报告》。</div>
+          <span class="project-role">调研支队长</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">教育部委托课题"发达国家家校社共育研究"</div>
+            <span class="project-period">2023.12</span>
+          </div>
+          <div class="project-desc">梳理英国家校社协同育人机制的建立历史与保障机制，为我国相关政策建设总结国际经验。</div>
+          <span class="project-role">课题参与人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">中国大学新生大学适应情况的影响因素及机制研究</div>
+            <span class="project-period">2022.03 — 至今</span>
+          </div>
+          <div class="project-desc">负责"内在方向感""内卷氛围感知"等变量数据分析及相关主题文章写作，已产出多篇 CSSCI 来源期刊论文。</div>
+          <span class="project-role">课题参与人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">中国家长教育方式与挂钩心理课题</div>
+            <span class="project-period">2021.04 — 2022.02</span>
+          </div>
+          <div class="project-desc">负责组织家长生理实验，安排施测人员分工及初步数据分析；与清华、港中文等高校老师合作发表 SSCI 收录论文。</div>
+          <span class="project-role">课题组织人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">幼儿园师资队伍的核心素养和能力建设研究——基于亚太四国的实证研究</div>
+            <span class="project-period">2019.02 — 2021.02</span>
+          </div>
+          <div class="project-desc">
+            国家社会科学基金教育学立项课题（BDA170027）。参与实地调研、数据分析与报告撰写；承担内参文件《普及公平且高质量的学前教育——广东经验和未来挑战》的编撰工作。
+          </div>
+          <span class="project-role">课题参与人</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">比较学前教育-国际混合式教学 MOOC 课程建设项目</div>
+            <span class="project-period">2018.11 — 2020.06</span>
+          </div>
+          <div class="project-desc">任课程助教，辅助开发设计；课程于 2019 年上线中国大学 MOOC 平台，2023 年获评第二批"国家级一流本科课程"。</div>
+          <span class="project-role">课程助教</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-dot muted"></div>
+        <div>
+          <div class="project-header">
+            <div class="project-title">甘肃会宁农村学前教育集合影响力研究</div>
+            <span class="project-period">2018.09 — 2018.11</span>
+          </div>
+          <div class="project-desc">负责贫困农村环境质量测查与幼儿教师访谈，评估农村幼儿教育发展成效。</div>
+          <span class="project-role">课题参与人</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title">联系方式</h2>
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:ccl23@mails.tsinghua.edu.cn">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">邮箱 Email</div>
+          <div class="contact-value">ccl23@mails.tsinghua.edu.cn</div>
+        </div>
+      </a>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63 2 2 0 011.96-2.18h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">电话 Phone</div>
+          <div class="contact-value">156-1146-6549</div>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">地址 Address</div>
+          <div class="contact-value">清华大学 教育研究院<br>北京市海淀区双清路30号</div>
+        </div>
+      </div>
+      <a class="contact-card" href="https://github.com/sharystar" target="_blank" rel="noopener">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <div class="contact-value">@sharystar</div>
+        </div>
+      </a>
+    </div>
+    <p class="contact-note">
+      欢迎就家庭教育、家校社协育、青少年心理发展等议题交流探讨，期待合作机会。<br>
+      Feel free to reach out for academic collaboration, research discussion, or any inquiry.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 陈淳琳 Chan Shun-lam · Tsinghua University · Built with ♥</p>
+</footer>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" aria-label="返回顶部">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+  // ===== NAV SCROLL =====
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    navbar.classList.toggle('scrolled', y > 20);
+    scrollTopBtn.classList.toggle('visible', y > 400);
+
+    // Active nav link
+    let current = '';
+    sections.forEach(sec => {
+      if (y >= sec.offsetTop - 80) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ===== HAMBURGER =====
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  // ===== PUB TABS =====
+  const tabs = document.querySelectorAll('.pub-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.target;
+      document.querySelectorAll('.pub-list').forEach(list => {
+        list.classList.toggle('active', list.id === 'pub-' + target);
+      });
+      // Re-trigger reveal for newly shown cards
+      triggerReveal();
+    });
+  });
+
+  // ===== REVEAL ON SCROLL =====
+  function triggerReveal() {
+    const reveals = document.querySelectorAll('.reveal:not(.visible)');
+    const windowH = window.innerHeight;
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowH - 60) el.classList.add('visible');
+    });
+  }
+  window.addEventListener('scroll', triggerReveal, { passive: true });
+  triggerReveal(); // run once on load
+</script>
+</body>
+</html>
