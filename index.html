@@ -238,7 +238,7 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
+      object-fit: cover; object-position: center 72%;
       z-index: 1;
     }
     .hero-avatar::after {
@@ -278,11 +278,24 @@
     .about-card p {
       font-size: 14px; color: var(--text-mid); line-height: 1.7;
     }
-    .about-intro {
-      font-size: 15px; color: var(--text-mid); line-height: 1.85;
-      margin-bottom: 32px;
+    .about-bio {
+      margin-bottom: 36px;
     }
-    .about-intro strong { color: var(--navy); }
+    .about-bio p {
+      font-size: 15px; color: var(--text-mid); line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .about-bio p em { color: var(--navy); font-style: italic; font-weight: 500; }
+    .about-quote {
+      margin: 24px 0;
+      padding: 20px 24px;
+      border-left: 4px solid var(--primary);
+      background: var(--primary-tint);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: 'Lora', serif;
+      font-size: 15px; font-style: italic;
+      color: var(--navy); line-height: 1.75;
+    }
 
     /* ===== EDUCATION ===== */
     #education { background: var(--bg); }
@@ -607,14 +620,14 @@
   <div class="container">
     <p class="section-label">About</p>
     <h2 class="section-title">关于我</h2>
-    <p class="about-intro reveal">
-      我是清华大学教育研究院的博士研究生，博士论文聚焦于<strong>家长人工智能素养（Parental AI Literacy）</strong>——
-      探究家长的 AI 素养如何影响其介入青少年 AI 使用的行为，识别其中的典型模式，
-      并分析这些模式对青少年 AI 使用能力发展的影响机制。
-      曾赴<strong>哈佛教育研究院</strong>访学，积累跨文化比较研究视野；
-      本科就读于<strong>北京师范大学教育学部</strong>学前教育专业，
-      奠定扎实的儿童发展与教育学基础。
-    </p>
+    <div class="about-bio reveal">
+      <p>I am a doctoral student at the School of Education, Tsinghua University, specializing in the study of parenting, adolescent psychology, and AI-empowered family education. My research sits at the intersection of educational psychology, developmental science, and emerging technology — asking, at its core: <em>how do the people around a child shape who that child becomes?</em></p>
+      <p>My curiosity began early. Growing up with a background in early childhood education and working as a volunteer teacher in rural areas of China, I became fascinated not just by children's development, but by the adults in their orbit — parents, teachers, communities — and how those relationships ripple into a child's learning and wellbeing.</p>
+      <blockquote class="about-quote">
+        I sometimes think of my ideal research contribution as a kind of Doraemon pocket: not a magic fix, but a quietly intelligent support system that is always there for families and children when they need it most.
+      </blockquote>
+      <p>That question has guided my work ever since. I am interested in connecting with researchers and practitioners working on parenting, family education technology, and human-AI interaction in educational contexts.</p>
+    </div>
     <div class="about-grid">
       <div class="about-card reveal reveal-delay-1">
         <div class="about-card-icon">
@@ -676,7 +689,7 @@
           </div>
           <span class="edu-period">2023.09 — 至今</span>
         </div>
-        <p class="edu-detail">主修课程：教育心理学、发展心理学、教育社会学等。师从魏晓旭副教授，研究家长教育焦虑与家校社协同育人机制。</p>
+        <p class="edu-detail">主修课程：教育心理学、发展心理学、教育社会学等。研究方向聚焦于家长 AI 素养与青少年 AI 使用发展。</p>
         <div class="edu-gpa">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           学位课学分均绩 3.88 / 4.0
@@ -726,29 +739,29 @@
     <h2 class="section-title">研究兴趣</h2>
     <div class="interests-grid">
       <div class="interest-card reveal">
-        <div class="interest-icon">🏫</div>
-        <h3>家校社协同育人</h3>
-        <p>探究家庭、学校、社区三方协同机制的构建路径，及其对青少年全面发展的影响。</p>
-      </div>
-      <div class="interest-card reveal reveal-delay-1">
         <div class="interest-icon">🤖</div>
         <h3>AI for Parenting</h3>
         <p>探究家长人工智能素养（Parental AI Literacy）如何影响其介入青少年 AI 使用的行为模式，及其对青少年 AI 使用能力发展的影响。</p>
-      </div>
-      <div class="interest-card reveal reveal-delay-2">
-        <div class="interest-icon">👶</div>
-        <h3>儿童早期发展</h3>
-        <p>关注学前阶段儿童语言、认知与社会性发展，以及幼儿教师专业化政策的比较研究。</p>
-      </div>
-      <div class="interest-card reveal reveal-delay-3">
-        <div class="interest-icon">🧠</div>
-        <h3>青少年心理健康</h3>
-        <p>探索父母教养行为（心理控制、教养敏感性）与青少年学业动机、心理健康之间的关联机制。</p>
       </div>
       <div class="interest-card reveal reveal-delay-1">
         <div class="interest-icon">💡</div>
         <h3>AI 与社会情感学习</h3>
         <p>研究 AI 伴学角色差异（泛化回答 vs. 空洞称赞）对大学生社会情感能力发展的差异化影响。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-2">
+        <div class="interest-icon">🧠</div>
+        <h3>青少年心理健康</h3>
+        <p>探索父母教养行为（心理控制、教养敏感性）与青少年学业动机、心理健康之间的关联机制。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-3">
+        <div class="interest-icon">🏫</div>
+        <h3>家校社协同育人</h3>
+        <p>探究家庭、学校、社区三方协同机制的构建路径，及其对青少年全面发展的影响。</p>
+      </div>
+      <div class="interest-card reveal reveal-delay-1">
+        <div class="interest-icon">👶</div>
+        <h3>儿童早期发展</h3>
+        <p>关注学前阶段儿童语言、认知与社会性发展，以及幼儿教师专业化政策的比较研究。</p>
       </div>
       <div class="interest-card reveal reveal-delay-2">
         <div class="interest-icon">🌏</div>
@@ -1188,6 +1201,15 @@
         <div>
           <div class="contact-label">GitHub</div>
           <div class="contact-value">@sharystar</div>
+        </div>
+      </a>
+      <a class="contact-card" href="LINKEDIN_URL" target="_blank" rel="noopener">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">Chan Shun-lam · Shary</div>
         </div>
       </a>
     </div>
