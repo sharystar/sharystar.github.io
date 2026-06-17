@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>陈淳琳 | Chan Shun-lam — Academic Homepage</title>
-  <meta name="description" content="陈淳琳 Chan Shun-lam — PhD candidate at Tsinghua University, researching family-school-community collaboration, parental education anxiety, and child development." />
+  <title>Shary Chan | Chan Shun-lam — Academic Homepage</title>
+  <meta name="description" content="Shary Chan (Chan Shun-lam) — 3rd-Year PhD Candidate at Tsinghua University. Research: Parental AI Literacy, AI for Parenting, adolescent development." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -502,7 +502,7 @@
     #contact .section-title { color: #fff; }
     #contact .section-title::after { background: linear-gradient(90deg, var(--primary-hover), transparent); }
     .contact-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      display: grid; grid-template-columns: repeat(2, 1fr);
       gap: 16px; margin-bottom: 40px;
     }
     .contact-card {
@@ -516,14 +516,27 @@
     .contact-card:hover {
       background: rgba(255,255,255,0.12); transform: translateY(-3px);
     }
+    .contact-card.featured {
+      grid-column: span 1;
+      background: rgba(123,141,214,0.22);
+      border-color: rgba(123,141,214,0.5);
+      padding: 24px 28px;
+    }
+    .contact-card.featured:hover { background: rgba(123,141,214,0.32); }
     .contact-icon {
       width: 42px; height: 42px; border-radius: 10px;
       background: rgba(123,141,214,0.35);
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
+    .contact-card.featured .contact-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: rgba(123,141,214,0.5);
+    }
     .contact-icon svg { width: 20px; height: 20px; color: var(--primary-pale); }
-    .contact-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 3px; font-weight: 500; }
+    .contact-card.featured .contact-icon svg { width: 24px; height: 24px; }
+    .contact-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 3px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
     .contact-value { font-size: 14px; color: #fff; font-weight: 500; }
+    .contact-card.featured .contact-value { font-size: 15px; font-weight: 600; }
     .contact-note {
       font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7;
       border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
@@ -585,6 +598,7 @@
       .hamburger { display: flex; }
       .petal-card { width: 100%; }
       .contact-grid { grid-template-columns: 1fr; }
+      .contact-card.featured { grid-column: span 1; }
     }
   </style>
 </head>
@@ -592,67 +606,65 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a class="nav-logo" href="#hero">陈淳琳</a>
+  <a class="nav-logo" href="#hero">Shary Chan</a>
   <ul class="nav-links">
-    <li><a href="#about">关于我</a></li>
-    <li><a href="#education">教育背景</a></li>
-    <li><a href="#interests">研究兴趣</a></li>
-    <li><a href="#publications">发表论文</a></li>
-    <li><a href="#projects">研究项目</a></li>
-    <li><a href="#contact">联系方式</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#interests">Interests</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="菜单">
+  <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about">关于我</a>
-  <a href="#education">教育背景</a>
-  <a href="#interests">研究兴趣</a>
-  <a href="#publications">发表论文</a>
-  <a href="#projects">研究项目</a>
-  <a href="#contact">联系方式</a>
+  <a href="#about">About</a>
+  <a href="#education">Education</a>
+  <a href="#interests">Interests</a>
+  <a href="#publications">Publications</a>
+  <a href="#projects">Research</a>
+  <a href="#contact">Contact</a>
 </div>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner container">
     <div class="hero-text">
-      <div class="hero-tag">PhD Candidate · Tsinghua University</div>
-      <h1 class="hero-name">陈淳琳</h1>
+      <div class="hero-tag">3rd-Year PhD Candidate · Tsinghua University</div>
+      <h1 class="hero-name">Shary Chan</h1>
       <p class="hero-name-en">Chan Shun-lam &nbsp;·&nbsp; Shary</p>
       <p class="hero-desc">
-        清华大学教育学院博士研究生，研究聚焦于<strong>家长 AI 素养</strong>、
-        <strong>AI for Parenting</strong> 与<strong>青少年 AI 使用发展</strong>。
-        曾于哈佛大学教育学院访学，致力于以实证研究探索人工智能时代的家庭教育新议题。
+        A 3rd-year PhD candidate at Tsinghua University specializing in <strong>Parental AI Literacy</strong>, <strong>AI for Parenting</strong>, and <strong>adolescent AI development</strong>. Former Visiting Scholar at Harvard Graduate School of Education.
       </p>
       <div class="hero-badges">
         <span class="badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          清华大学
+          Tsinghua University
         </span>
         <span class="badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          2023 — 至今
+          2023 — Present
         </span>
         <span class="badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          北京 · 海淀
+          Beijing, China
         </span>
       </div>
       <div class="hero-cta">
         <a class="btn-primary" href="#publications">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          查看论文
+          View Publications
         </a>
         <a class="btn-secondary" href="#contact">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          联系我
+          Contact Me
         </a>
       </div>
     </div>
     <div class="hero-avatar">
-      <span class="hero-avatar-fallback">陈</span>
+      <span class="hero-avatar-fallback">S</span>
       <img src="avatar.jpg" alt="Shary Chan" onerror="this.style.display='none'" />
     </div>
   </div>
@@ -662,7 +674,7 @@
 <section id="about">
   <div class="container">
     <p class="section-label">About</p>
-    <h2 class="section-title">关于我</h2>
+    <h2 class="section-title">About</h2>
     <div class="about-bio reveal">
       <p>I am a doctoral student at the School of Education, Tsinghua University, specializing in the study of parenting, adolescent psychology, and AI-empowered family education. My research sits at the intersection of educational psychology, developmental science, and emerging technology — asking, at its core: <em>how do the people around a child shape who that child becomes?</em></p>
       <p>My curiosity began early. Growing up with a background in early childhood education and working as a volunteer teacher in rural areas of China, I became fascinated not just by children's development, but by the adults in their orbit — parents, teachers, communities — and how those relationships ripple into a child's learning and wellbeing.</p>
@@ -676,152 +688,29 @@
         <div class="about-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
         </div>
-        <h3>实证研究</h3>
-        <p>擅长量化与质性混合研究方法，主持或参与十余项科研课题，具备扎实的数据分析与调研设计能力。</p>
+        <h3>Empirical Research</h3>
+        <p>Skilled in mixed-methods (quantitative + qualitative) research. Led and contributed to over ten research projects with expertise in data analysis and survey design.</p>
       </div>
       <div class="about-card reveal reveal-delay-2">
         <div class="about-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/><path d="M9 10h.01M15 10h.01"/></svg>
         </div>
-        <h3>人机交互</h3>
-        <p>探索 AI 在家庭教育与青少年发展情境中的角色，研究人工智能与家长、儿童之间的互动机制。</p>
+        <h3>Human-AI Interaction</h3>
+        <p>Investigating how AI mediates family education and child development, and how parents and children interact with intelligent systems.</p>
       </div>
       <div class="about-card reveal reveal-delay-3">
         <div class="about-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
         </div>
-        <h3>国际视野</h3>
-        <p>在 AERA、SRCD、EECERA、AIED 等顶级国际学术会议报告研究成果，具备跨文化比较研究经验。</p>
+        <h3>Global Perspective</h3>
+        <p>Presented at AERA, SRCD, EECERA, and AIED. Experienced in cross-cultural comparative research with international academic networks.</p>
       </div>
       <div class="about-card reveal reveal-delay-1">
         <div class="about-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
         </div>
-        <h3>教学实践</h3>
-        <p>担任《教育心理学》《学术之道》《家庭教育导论》等课程助教，独立完成小班课备课与论文辅导。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education">
-  <div class="container">
-    <p class="section-label">Education</p>
-    <h2 class="section-title">教育背景</h2>
-    <div class="edu-timeline">
-
-      <!-- Harvard -->
-      <div class="edu-item highlight reveal">
-        <div class="edu-dot"></div>
-        <div class="edu-header">
-          <div>
-            <div class="edu-degree">访问学者 · Visiting Scholar</div>
-            <div class="edu-school">🇺🇸 Harvard Graduate School of Education，哈佛大学教育学院</div>
-          </div>
-          <span class="edu-period" style="color:var(--mint-dark);background:rgba(114,184,174,0.12);">2024 – 2025</span>
-        </div>
-        <p class="edu-detail">赴哈佛大学教育学院访学，开展家校社协同育人的跨文化比较研究，拓展国际学术合作网络。</p>
-      </div>
-
-      <!-- Tsinghua PhD -->
-      <div class="edu-item reveal">
-        <div class="edu-dot"></div>
-        <div class="edu-header">
-          <div>
-            <div class="edu-degree">教育学 | 博士研究生</div>
-            <div class="edu-school">🎓 清华大学教育学院</div>
-          </div>
-          <span class="edu-period">2023.09 — 至今</span>
-        </div>
-        <p class="edu-detail">主修课程：教育心理学、发展心理学、教育社会学等。研究方向聚焦于家长 AI 素养与青少年 AI 使用发展。</p>
-        <div class="edu-gpa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          学位课学分均绩 3.88 / 4.0
-        </div>
-      </div>
-
-      <!-- Tsinghua Master -->
-      <div class="edu-item reveal">
-        <div class="edu-dot"></div>
-        <div class="edu-header">
-          <div>
-            <div class="edu-degree">高等教育学 | 教育学硕士</div>
-            <div class="edu-school">🎓 清华大学教育学院</div>
-          </div>
-          <span class="edu-period">2020.09 — 2023.06</span>
-        </div>
-        <p class="edu-detail">主修课程：教育心理学、发展心理学、认知理论与学习科学等。硕士论文《双减背景下中学生家长教育焦虑现况及其对青少年学业发展的影响研究》。</p>
-        <div class="edu-gpa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          学位课学分均绩 3.93 / 4.0
-        </div>
-      </div>
-
-      <!-- BNU Bachelor -->
-      <div class="edu-item reveal">
-        <div class="edu-dot"></div>
-        <div class="edu-header">
-          <div>
-            <div class="edu-degree">学前教育专业 | 教育学学士</div>
-            <div class="edu-school">🎓 北京师范大学教育学部</div>
-          </div>
-          <span class="edu-period">2016.09 — 2020.07</span>
-        </div>
-        <p class="edu-detail">主修课程：教育学原理、比较学前教育、学前儿童心理学、学前儿童语言教育等。毕业论文《从"资格"到"专业"：中澳幼儿教师专业发展政策的比较研究》获"优秀"评级。</p>
-        <div class="edu-gpa">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          毕业学分均绩 3.85 / 4.0
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- RESEARCH INTERESTS -->
-<section id="interests">
-  <div class="container">
-    <p class="section-label">Research Interests</p>
-    <h2 class="section-title">研究兴趣</h2>
-    <div class="interests-flower reveal">
-      <div class="flower-guide"></div>
-      <div class="flower-center">Research<br>Interests</div>
-      <!-- petal-1: top -->
-      <div class="petal-card petal-1">
-        <div class="petal-icon">🤖</div>
-        <h3>AI for Parenting</h3>
-        <p>家长 AI 素养如何塑造对青少年 AI 使用的介入模式</p>
-      </div>
-      <!-- petal-2: top-right -->
-      <div class="petal-card petal-2">
-        <div class="petal-icon">💡</div>
-        <h3>AI 与社会情感学习</h3>
-        <p>AI 伴学角色对大学生社会情感发展的差异化影响</p>
-      </div>
-      <!-- petal-3: bottom-right -->
-      <div class="petal-card petal-3">
-        <div class="petal-icon">🏫</div>
-        <h3>家庭教育与<br>家校社协同育人</h3>
-        <p>家庭、学校、社区三方协同机制的构建路径</p>
-      </div>
-      <!-- petal-4: bottom -->
-      <div class="petal-card petal-4">
-        <div class="petal-icon">🧠</div>
-        <h3>青少年心理健康</h3>
-        <p>父母教养行为与青少年学业动机、心理健康的关联</p>
-      </div>
-      <!-- petal-5: bottom-left -->
-      <div class="petal-card petal-5">
-        <div class="petal-icon">👶</div>
-        <h3>儿童早期发展</h3>
-        <p>学前儿童语言、认知与社会性发展及教师专业化政策</p>
-      </div>
-      <!-- petal-6: top-left -->
-      <div class="petal-card petal-6">
-        <div class="petal-icon">🌏</div>
-        <h3>比较教育政策</h3>
-        <p>从国际视角审视家校社协育政策演变与本土启示</p>
+        <h3>Teaching Practice</h3>
+        <p>Served as teaching assistant for Educational Psychology, Academic Writing, and Introduction to Family Education. Independently led discussion sections and guided student papers.</p>
       </div>
     </div>
   </div>
@@ -831,12 +720,12 @@
 <section id="publications">
   <div class="container">
     <p class="section-label">Publications</p>
-    <h2 class="section-title">发表论文</h2>
+    <h2 class="section-title">Publications</h2>
 
     <div class="pub-tabs">
-      <button class="pub-tab active" data-target="all">全部</button>
-      <button class="pub-tab" data-target="journal">期刊论文</button>
-      <button class="pub-tab" data-target="conference">会议论文</button>
+      <button class="pub-tab active" data-target="all">All</button>
+      <button class="pub-tab" data-target="journal">Journal Articles</button>
+      <button class="pub-tab" data-target="conference">Conference Papers</button>
     </div>
 
     <!-- ALL -->
@@ -867,18 +756,18 @@
       <!-- SRCD 2025 -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">
           Concurrent and Longitudinal Associations Between Parents' Child-based Worth, Education Anxiety and Psychological Control in China
         </div>
-        <div class="pub-authors"><strong>Chan, S. L.</strong>, Yi, C., &amp; Wei, J.</div>
+        <div class="pub-authors">Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
         <div class="pub-venue">Poster presented at the SRCD 2025 Biennial Meeting, Minneapolis, Minnesota, USA (May 2025)</div>
       </div>
 
       <!-- AERA 2025 -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">
           Exploring the Policy Influences on Chinese Parents' Education Anxiety
         </div>
@@ -889,7 +778,7 @@
       <!-- Basic Edu Review 2025 -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           Building Family-school-community Cooperative Education System with Trust and Sharing: Overview of the Experience from the United Kingdom
         </div>
@@ -900,7 +789,7 @@
       <!-- JHS 2025 -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           Trajectories of Authentic Inner Compass in the College Years: Implications for Psychological Functioning among Chinese Students
         </div>
@@ -911,7 +800,7 @@
       <!-- ARQL 2025 -->
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           The Cross-lagged Associations between Authentic Inner Compass and Self-control among Chinese College Students
         </div>
@@ -922,7 +811,7 @@
       <!-- Memory 2023 -->
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           My Child and I: Self- and Child-reference Effects among Parents with Self-worth Contingent on Children's Performance
         </div>
@@ -933,7 +822,7 @@
       <!-- FEC 2023 -->
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           The Associations between Middle School Parents' Educational Anxiety and Their Academic Socialization and Psychological Control: The Moderating Role of Parent-Adolescent Relationships
         </div>
@@ -944,7 +833,7 @@
       <!-- ISSCD Hong Kong 2023 -->
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">
           Parents' Education Anxiety in Mainland China: Current Situation and Future Trends
         </div>
@@ -955,7 +844,7 @@
       <!-- TJOE 2022 -->
       <div class="pub-card reveal">
         <span class="pub-year">2022</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">
           The Association between Freshmen's Academic Involution and College Adjustment: The Moderating Effect of Academic Involution Atmosphere
         </div>
@@ -966,7 +855,7 @@
       <!-- EECERA 2019 -->
       <div class="pub-card reveal">
         <span class="pub-year">2019</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">
           The Impact of Home Multimedia Environment on the Development of Language Ability of 3–6 Years Old Children: A Case Study of S City
         </div>
@@ -980,42 +869,42 @@
     <div class="pub-list" id="pub-journal">
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">Building Family-school-community Cooperative Education System with Trust and Sharing: Overview of the Experience from the United Kingdom</div>
         <div class="pub-authors"><strong>Chan, S. L.</strong>, Sun, X., He, Z., Wei, Y., &amp; Wei, J.</div>
         <div class="pub-venue">Basic Education Review, (01), 42–58.</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">Trajectories of Authentic Inner Compass in the College Years: Implications for Psychological Functioning among Chinese Students</div>
         <div class="pub-authors">Zhou, X., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
         <div class="pub-venue">Journal of Happiness Studies, 26(1), 48.</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">The Cross-lagged Associations between Authentic Inner Compass and Self-control among Chinese College Students</div>
         <div class="pub-authors">Wei, J., Zhou, X., &amp; <strong>Chan, S. L.</strong></div>
         <div class="pub-venue">Applied Research in Quality of Life, 1–19.</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">My Child and I: Self- and Child-reference Effects among Parents with Self-worth Contingent on Children's Performance</div>
         <div class="pub-authors">Zhang, M. R., Ng, F. F., Hong, Y. Y., Wei, J., Liu, R. D., &amp; <strong>Chan, S. L.</strong></div>
         <div class="pub-venue">Memory (Hove, England), 31(9), 1244–1257.</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">The Associations between Middle School Parents' Educational Anxiety and Their Academic Socialization and Psychological Control</div>
         <div class="pub-authors">Liu, H., Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
         <div class="pub-venue">The Family Education of China, (04), 30–40.</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2022</span>
-        <span class="pub-badge journal">期刊</span>
+        <span class="pub-badge journal">Journal</span>
         <div class="pub-title">The Association between Freshmen's Academic Involution and College Adjustment: The Moderating Effect of Academic Involution Atmosphere</div>
         <div class="pub-authors">Zhou, X., Wei, J., &amp; <strong>Chan, S. L.</strong></div>
         <div class="pub-venue">Tsinghua Journal of Education, (05), 131–140.</div>
@@ -1040,28 +929,28 @@
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">Concurrent and Longitudinal Associations Between Parents' Child-based Worth, Education Anxiety and Psychological Control in China</div>
-        <div class="pub-authors"><strong>Chan, S. L.</strong>, Yi, C., &amp; Wei, J.</div>
+        <div class="pub-authors">Yi, C., <strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
         <div class="pub-venue">Poster presented at the SRCD 2025 Biennial Meeting, Minneapolis, Minnesota, USA (May 2025)</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2025</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">Exploring the Policy Influences on Chinese Parents' Education Anxiety</div>
         <div class="pub-authors"><strong>Chan, S. L.</strong>, &amp; Wei, J.</div>
         <div class="pub-venue">Poster presented at the 2025 AERA Annual Meeting, Denver, Colorado, USA (Apr. 2025)</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2023</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">Parents' Education Anxiety in Mainland China: Current Situation and Future Trends</div>
         <div class="pub-authors"><strong>Chan, S. L.</strong></div>
         <div class="pub-venue">International Summer School and Research Conference for Doctoral Students, Hong Kong (Jul. 2023)</div>
       </div>
       <div class="pub-card reveal">
         <span class="pub-year">2019</span>
-        <span class="pub-badge conference">会议</span>
+        <span class="pub-badge conference">Conference</span>
         <div class="pub-title">The Impact of Home Multimedia Environment on the Development of Language Ability of 3–6 Years Old Children</div>
         <div class="pub-authors"><strong>Chan, S. L.</strong>, Wang, S., Zhang, C., &amp; Liu, T.</div>
         <div class="pub-venue">EECERA Annual Conference, Thessaloniki, Greece (Aug. 2019)</div>
@@ -1075,18 +964,18 @@
 <section id="projects">
   <div class="container">
     <p class="section-label">Research Projects</p>
-    <h2 class="section-title">参与过的研究项目</h2>
+    <h2 class="section-title">Research Projects</h2>
     <div class="projects-grid">
 
       <div class="project-card reveal">
         <div class="project-dot"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">博士论文：家长人工智能素养对青少年 AI 使用介入行为的影响机制研究</div>
-            <span class="project-period">2023.09 — 至今</span>
+            <div class="project-title">PhD Dissertation: Mechanisms of Parental AI Literacy on Adolescent AI Use Mediation</div>
+            <span class="project-period">2023.09 — Present</span>
           </div>
-          <div class="project-desc">探究家长 AI 素养（Parental AI Literacy）如何影响其介入青少年 AI 使用的行为，识别典型介入模式，并分析不同模式对青少年 AI 使用能力发展的影响路径。</div>
-          <span class="project-role">博士论文主持人</span>
+          <div class="project-desc">Examining how Parental AI Literacy shapes mediation behaviors toward adolescents' AI use, identifying typical mediation patterns and their effects on adolescents' AI development.</div>
+          <span class="project-role">Lead Researcher (PhD Dissertation)</span>
         </div>
       </div>
 
@@ -1094,11 +983,11 @@
         <div class="project-dot"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">北京市门头沟区教育"十五五"时期教育改革和发展规划</div>
-            <span class="project-period">2025.03 — 至今</span>
+            <div class="project-title">Beijing Mentougou District Education Reform and Development Plan (2026–2030)</div>
+            <span class="project-period">2025.03 — Present</span>
           </div>
-          <div class="project-desc">梳理门头沟区基础教育及家校社协育发展现状与重点任务，参与实地调研及报告写作。</div>
-          <span class="project-role">协助负责人</span>
+          <div class="project-desc">Mapped the current landscape and priorities for basic education and family-school-community collaboration in Mentougou District; contributed to fieldwork and report writing.</div>
+          <span class="project-role">Research Collaborator</span>
         </div>
       </div>
 
@@ -1106,11 +995,11 @@
         <div class="project-dot"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">小学-初中衔接视角下父母教养敏感性的变化趋势及影响机制研究</div>
-            <span class="project-period">2024.10 — 至今</span>
+            <div class="project-title">Trajectories and Mechanisms of Parental Sensitivity During the Primary-to-Middle School Transition</div>
+            <span class="project-period">2024.10 — Present</span>
           </div>
-          <div class="project-desc">梳理当前父母教养敏感性现状及特征，组织开展追踪研究，设计纵向调研方案。</div>
-          <span class="project-role">协助负责人</span>
+          <div class="project-desc">Reviewed current research on parental sensitivity; organized a longitudinal tracking study and designed the survey protocol.</div>
+          <span class="project-role">Research Collaborator</span>
         </div>
       </div>
 
@@ -1118,11 +1007,11 @@
         <div class="project-dot"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">家校心理健康共育现状及对策研究</div>
+            <div class="project-title">Family-School Co-Promotion of Mental Health: Current State and Strategies</div>
             <span class="project-period">2024.07 — 2024.08</span>
           </div>
-          <div class="project-desc">主持调研项目，梳理当前高中家校社共育困境，为构建公办高中家校社协同促进学生心理健康机制提出政策方案。</div>
-          <span class="project-role">项目主持人</span>
+          <div class="project-desc">Led the research project; diagnosed barriers in family-school-community collaboration at the high school level and proposed a policy framework to promote student mental health.</div>
+          <span class="project-role">Principal Investigator</span>
         </div>
       </div>
 
@@ -1130,11 +1019,11 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">香港国民教育调查研究</div>
+            <div class="project-title">Survey on National Education in Hong Kong</div>
             <span class="project-period">2024.02</span>
           </div>
-          <div class="project-desc">任调研支队长，就香港人文学科课程改革、国民教育体系构建开展深度调研，产出《香港国民教育课程改革研究报告》。</div>
-          <span class="project-role">调研支队长</span>
+          <div class="project-desc">Served as Survey Team Leader; conducted in-depth research on humanities curriculum reform and national education in Hong Kong; produced a research report on curriculum reform.</div>
+          <span class="project-role">Survey Team Leader</span>
         </div>
       </div>
 
@@ -1142,11 +1031,11 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">教育部委托课题"发达国家家校社共育研究"</div>
+            <div class="project-title">Ministry of Education Research: Family-School-Community Collaboration in Developed Countries</div>
             <span class="project-period">2023.12</span>
           </div>
-          <div class="project-desc">梳理英国家校社协同育人机制的建立历史与保障机制，为我国相关政策建设总结国际经验。</div>
-          <span class="project-role">课题参与人</span>
+          <div class="project-desc">Reviewed the historical development and institutional mechanisms of family-school-community collaboration in the UK to inform domestic policy-making.</div>
+          <span class="project-role">Research Member</span>
         </div>
       </div>
 
@@ -1154,11 +1043,11 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">中国大学新生大学适应情况的影响因素及机制研究</div>
-            <span class="project-period">2022.03 — 至今</span>
+            <div class="project-title">Factors and Mechanisms of College Adjustment Among Chinese Freshmen</div>
+            <span class="project-period">2022.03 — Present</span>
           </div>
-          <div class="project-desc">负责"内在方向感""内卷氛围感知"等变量数据分析及相关主题文章写作，已产出多篇 CSSCI 来源期刊论文。</div>
-          <span class="project-role">课题参与人</span>
+          <div class="project-desc">Led data analysis on "authentic inner compass" and "academic involution atmosphere"; co-authored multiple CSSCI-indexed journal articles.</div>
+          <span class="project-role">Research Member</span>
         </div>
       </div>
 
@@ -1166,11 +1055,11 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">中国家长教育方式与挂钩心理课题</div>
+            <div class="project-title">Chinese Parents' Educational Practices and Child-Contingent Self-Worth</div>
             <span class="project-period">2021.04 — 2022.02</span>
           </div>
-          <div class="project-desc">负责组织家长生理实验，安排施测人员分工及初步数据分析；与清华、港中文等高校老师合作发表 SSCI 收录论文。</div>
-          <span class="project-role">课题组织人</span>
+          <div class="project-desc">Organized physiological experiments with parents; coordinated data collection and preliminary analysis; co-published SSCI-indexed papers with researchers from Tsinghua and CUHK.</div>
+          <span class="project-role">Research Coordinator</span>
         </div>
       </div>
 
@@ -1178,13 +1067,13 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">幼儿园师资队伍的核心素养和能力建设研究——基于亚太四国的实证研究</div>
+            <div class="project-title">Core Competencies and Capacity Building of ECE Teachers: A Four-Country Study in Asia-Pacific</div>
             <span class="project-period">2019.02 — 2021.02</span>
           </div>
           <div class="project-desc">
-            国家社会科学基金教育学立项课题（BDA170027）。参与实地调研、数据分析与报告撰写；承担内参文件《普及公平且高质量的学前教育——广东经验和未来挑战》的编撰工作。
+            National Social Science Fund project (BDA170027). Conducted fieldwork, data analysis, and report writing; contributed to an internal policy brief on promoting equitable and high-quality early childhood education in Guangdong.
           </div>
-          <span class="project-role">课题参与人</span>
+          <span class="project-role">Research Member</span>
         </div>
       </div>
 
@@ -1192,11 +1081,11 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">比较学前教育-国际混合式教学 MOOC 课程建设项目</div>
+            <div class="project-title">Comparative Early Childhood Education — International Blended Learning MOOC</div>
             <span class="project-period">2018.11 — 2020.06</span>
           </div>
-          <div class="project-desc">任课程助教，辅助开发设计；课程于 2019 年上线中国大学 MOOC 平台，2023 年获评第二批"国家级一流本科课程"。</div>
-          <span class="project-role">课程助教</span>
+          <div class="project-desc">Served as teaching assistant; assisted with course design and development. The MOOC launched on China University MOOC in 2019 and was designated a National First-Class Undergraduate Course in 2023.</div>
+          <span class="project-role">Teaching Assistant</span>
         </div>
       </div>
 
@@ -1204,14 +1093,137 @@
         <div class="project-dot muted"></div>
         <div>
           <div class="project-header">
-            <div class="project-title">甘肃会宁农村学前教育集合影响力研究</div>
+            <div class="project-title">Collective Impact of Rural Early Childhood Education in Huining, Gansu</div>
             <span class="project-period">2018.09 — 2018.11</span>
           </div>
-          <div class="project-desc">负责贫困农村环境质量测查与幼儿教师访谈，评估农村幼儿教育发展成效。</div>
-          <span class="project-role">课题参与人</span>
+          <div class="project-desc">Conducted environmental quality assessments and teacher interviews in rural poverty areas; evaluated the effectiveness of ECE development initiatives.</div>
+          <span class="project-role">Research Member</span>
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <p class="section-label">Education</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-timeline">
+
+      <!-- Harvard -->
+      <div class="edu-item highlight reveal">
+        <div class="edu-dot"></div>
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">Visiting Scholar</div>
+            <div class="edu-school">🇺🇸 Harvard Graduate School of Education，Harvard Graduate School of Education</div>
+          </div>
+          <span class="edu-period" style="color:var(--mint-dark);background:rgba(114,184,174,0.12);">2024 – 2025</span>
+        </div>
+        <p class="edu-detail">Conducted cross-cultural research on family-school-community collaboration in education; expanded international academic networks.</p>
+      </div>
+
+      <!-- Tsinghua PhD -->
+      <div class="edu-item reveal">
+        <div class="edu-dot"></div>
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">PhD Candidate in Education</div>
+            <div class="edu-school">🎓 School of Education, Tsinghua University</div>
+          </div>
+          <span class="edu-period">2023.09 — Present</span>
+        </div>
+        <p class="edu-detail">Coursework: Educational Psychology, Developmental Psychology, Sociology of Education. Research focus: Parental AI Literacy and adolescent AI use development.</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          GPA: 3.88 / 4.0
+        </div>
+      </div>
+
+      <!-- Tsinghua Master -->
+      <div class="edu-item reveal">
+        <div class="edu-dot"></div>
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">M.Ed. in Higher Education</div>
+            <div class="edu-school">🎓 School of Education, Tsinghua University</div>
+          </div>
+          <span class="edu-period">2020.09 — 2023.06</span>
+        </div>
+        <p class="edu-detail">Coursework: Educational Psychology, Developmental Psychology, Cognitive Theory and Learning Sciences. Master's thesis: Parental Education Anxiety Under the "Double Reduction" Policy and Its Effects on Adolescent Academic Development.</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          GPA: 3.93 / 4.0
+        </div>
+      </div>
+
+      <!-- BNU Bachelor -->
+      <div class="edu-item reveal">
+        <div class="edu-dot"></div>
+        <div class="edu-header">
+          <div>
+            <div class="edu-degree">B.Ed. in Early Childhood Education</div>
+            <div class="edu-school">🎓 Faculty of Education, Beijing Normal University</div>
+          </div>
+          <span class="edu-period">2016.09 — 2020.07</span>
+        </div>
+        <p class="edu-detail">Coursework: Principles of Education, Comparative Early Childhood Education, Child Psychology, Language Education for Young Children. Bachelor's thesis: From "Qualification" to "Professionalism": A Comparative Study of ECE Teacher Development Policy in China and Australia — rated Excellent.</p>
+        <div class="edu-gpa">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          GPA: 3.85 / 4.0
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH INTERESTS -->
+<section id="interests">
+  <div class="container">
+    <p class="section-label">Research Interests</p>
+    <h2 class="section-title">Interests</h2>
+    <div class="interests-flower reveal">
+      <div class="flower-guide"></div>
+      <div class="flower-center">Research<br>Interests</div>
+      <!-- petal-1: top -->
+      <div class="petal-card petal-1">
+        <div class="petal-icon">🤖</div>
+        <h3>AI for Parenting</h3>
+        <p>How parental AI literacy shapes mediation of adolescents' AI use</p>
+      </div>
+      <!-- petal-2: top-right -->
+      <div class="petal-card petal-2">
+        <div class="petal-icon">💡</div>
+        <h3>AI & Social-Emotional Learning</h3>
+        <p>Differential effects of AI companion roles on college students' SEL development</p>
+      </div>
+      <!-- petal-3: bottom-right -->
+      <div class="petal-card petal-3">
+        <div class="petal-icon">🏫</div>
+        <h3>Family Education &<br>Home-School-Community</h3>
+        <p>Building collaborative mechanisms across family, school, and community</p>
+      </div>
+      <!-- petal-4: bottom -->
+      <div class="petal-card petal-4">
+        <div class="petal-icon">🧠</div>
+        <h3>Adolescent Mental Health</h3>
+        <p>Links between parenting behaviors, academic motivation, and adolescent wellbeing</p>
+      </div>
+      <!-- petal-5: bottom-left -->
+      <div class="petal-card petal-5">
+        <div class="petal-icon">👶</div>
+        <h3>Early Childhood Development</h3>
+        <p>Language, cognition, and social development in young children; ECE teacher professionalization</p>
+      </div>
+      <!-- petal-6: top-left -->
+      <div class="petal-card petal-6">
+        <div class="petal-icon">🌏</div>
+        <h3>Comparative Education Policy</h3>
+        <p>Tracing family-school-community policy evolution and its local implications from a global lens</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1220,14 +1232,14 @@
 <section id="contact">
   <div class="container">
     <p class="section-label">Contact</p>
-    <h2 class="section-title">联系方式</h2>
+    <h2 class="section-title">Contact</h2>
     <div class="contact-grid">
-      <a class="contact-card" href="mailto:ccl23@mails.tsinghua.edu.cn">
+      <a class="contact-card featured" href="mailto:ccl23@mails.tsinghua.edu.cn">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </div>
         <div>
-          <div class="contact-label">邮箱 Email</div>
+          <div class="contact-label">Email</div>
           <div class="contact-value">ccl23@mails.tsinghua.edu.cn</div>
         </div>
       </a>
@@ -1236,7 +1248,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.63 2 2 0 011.96-2.18h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
         <div>
-          <div class="contact-label">电话 Phone</div>
+          <div class="contact-label">Phone</div>
           <div class="contact-value">156-1146-6549</div>
         </div>
       </div>
@@ -1245,8 +1257,8 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div>
-          <div class="contact-label">地址 Address</div>
-          <div class="contact-value">清华大学 教育研究院<br>北京市海淀区双清路30号</div>
+          <div class="contact-label">Office</div>
+          <div class="contact-value">School of Education, Tsinghua University<br>Beijing, China</div>
         </div>
       </div>
       <a class="contact-card" href="https://github.com/sharystar" target="_blank" rel="noopener">
@@ -1258,7 +1270,7 @@
           <div class="contact-value">@sharystar</div>
         </div>
       </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/shun-lam-chan-7902363aa/" target="_blank" rel="noopener">
+      <a class="contact-card featured" href="https://www.linkedin.com/in/shun-lam-chan-7902363aa/" target="_blank" rel="noopener">
         <div class="contact-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </div>
@@ -1269,19 +1281,18 @@
       </a>
     </div>
     <p class="contact-note">
-      欢迎就家庭教育、家校社协育、青少年心理发展等议题交流探讨，期待合作机会。<br>
-      Feel free to reach out for academic collaboration, research discussion, or any inquiry.
+      Feel free to reach out for academic collaboration, research discussion, or any inquiry related to AI in education, parenting, and child development.
     </p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 陈淳琳 Chan Shun-lam · Tsinghua University · Built with ♥</p>
+  <p>© 2026 Chan Shun-lam (Shary) · Tsinghua University · Built with ♥</p>
 </footer>
 
 <!-- SCROLL TO TOP -->
-<button class="scroll-top" id="scrollTop" aria-label="返回顶部">
+<button class="scroll-top" id="scrollTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
